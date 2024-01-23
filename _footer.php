@@ -2,15 +2,15 @@
       <div class="footer-top">
         <div class="container">
           <div class="row">
-  
+
             <div class="col-lg-3 col-md-6">
               <div class="footer-info">
-                <a href="https://sultra.bps.go.id" class="logo me-auto me-lg-0"><img src="assets/img/logobps.svg" alt="" class="img-fluid"  style="margin-bottom: 15px;"></a>
+                <a href="https://sulbar.bps.go.id" class="logo me-auto me-lg-0"><img src="assets/img/logobps.svg" alt="" class="img-fluid"  style="margin-bottom: 15px;"></a>
                 <p>
-                  Jl. Boulevard No. 1<br>
-                  Kendari, Sulawesi Tenggara<br><br>
+                  Jl. RE. Martadinata No. 10<br>
+                  Mamuju, Sulawesi Barat<br><br>
                   <strong>Telp:</strong> 08 123 100 7474<br>
-                  <strong>Email:</strong> sultra@bps.go.id<br>
+                  <strong>Email:</strong> sulbar@bps.go.id<br>
                 </p>
                 <div class="social-links mt-3">
                   <a href="https://facebook.com/bpsprovsultra" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -19,11 +19,11 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="col-lg-2 col-md-6 footer-links">
               <h4>Tautan:</h4>
             </div>
-  
+
             <div class="col-lg-2 col-md-6 footer-links">
               <h4>Bappeda</h4>
               <ul>
@@ -44,7 +44,7 @@
 							  <li><i class="bx bx-chevron-right"></i> <a href="https://bappeda.papua.go.id" target="_blank" rel="nofollow" class="effect-shine">Papua</a></li>
               </ul>
             </div>
-  
+
             <div class="col-lg-2 col-md-6 footer-links">
               <h4>Badan Pusat Statistik</h4>
               <ul>
@@ -86,11 +86,11 @@
 							  <li><i class="bx bx-chevron-right"></i> <a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Papua.aspx" target="_blank" rel="nofollow" class="effect-shine">KP Papua</a></li>
               </ul>
             </div>
-  
+
           </div>
         </div>
       </div>
-  
+
       <div class="container">
         <div class="copyright">
           <span id="currentYear"></span> &copy; <strong><span>BPS Provinsi Sulawesi Tenggara</span></strong>. Semua Hak Dilindungi
@@ -100,7 +100,7 @@
 
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  
+
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -108,7 +108,7 @@
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
-  
+
     <!-- Tambahan JS File -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/tabs.js"></script>
@@ -120,9 +120,9 @@
           if (next.length) next.prop('checked', true);
           else $('.sec-1-input').first().prop('checked', true);
         }
-    
+
         var bannerTimer = setInterval(bannerSwitcher, 5000);
-    
+
         $('nav .controls label').click(function() {
           clearInterval(bannerTimer);
           bannerTimer = setInterval(bannerSwitcher, 5000)

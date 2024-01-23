@@ -1,3 +1,3 @@
 <?php
-header("location: /backend/web/index.php");
+header("location: /kasulampua/backend/web/index.php");
 ?>
