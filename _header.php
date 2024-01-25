@@ -19,8 +19,8 @@
     <!-- Start Header -->
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-<a href="index.php" class="logo me-auto me-lg-0"><img src="assets/img/kasulampualogo.svg" alt="" class="img-fluid"></a>          
-    
+<a href="index.php" class="logo me-auto me-lg-0"><img src="assets/img/kasulampualogo.svg" alt="" class="img-fluid"></a>
+
           <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
               <li><a href="./index.php">Beranda</a></li>
@@ -32,8 +32,8 @@
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
-          <a href="https://wa.me/6281231007474" class="book-a-table-btn d-none d-lg-flex">Hubungi Kami</a>
-    
+          <a href="https://wa.me/6282293382522" target="_blank" class="book-a-table-btn d-none d-lg-flex">Hubungi Kami</a>
+
         </div>
     </header>
     <!-- End Header -->
