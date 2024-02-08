@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  
+
     <title>Statistik Kasulampua</title>
 
     <meta content="Website Resmi BPS se-Kasulampua (Kalimantan, Sulawesi, Maluku, dan Papua)" name="description">
@@ -26,13 +26,13 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Tambahan CSS -->
-    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/chart.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/v4-shims.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
     <script>
     window.Promise ||
@@ -49,9 +49,9 @@
       )
     </script>
 
-  
+
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-  
+
 
     <script>
     // Replace Math.random() with a pseudo-random number generator to get reproducible results in e2e tests
@@ -76,7 +76,7 @@
           <section id="berita" class="events">
           <div class="container" data-aos="fade-up">
             <div class="row gx-5" style="display:flex; justify-content:center;">
-              
+
               <div class="col-lg-12 col-md-12 mb-12 mb-lg-12" style="max-width:75%;">
                 <!-- News block -->
                 <div>
@@ -110,8 +110,8 @@
                     <p class="text-dark">
                     Kegiatan ini bertujuan untuk mendiskusikan Tujuan, Sasaran, Strategi dan Arah Kebijakan Pembangunan Daerah Serta Program Perangkat Daerah dengan seluruh OPD Lingkup Pemprov. Sultra.
                     </p>
-                    <p class="text-dark"> 
-                    Kegiatan ini dihadiri oleh Kepala Bappeda Prov. Sultra (J. Robert), dan Seluruh Perencana OPD Lingkup Pemprov. Sultra. 
+                    <p class="text-dark">
+                    Kegiatan ini dihadiri oleh Kepala Bappeda Prov. Sultra (J. Robert), dan Seluruh Perencana OPD Lingkup Pemprov. Sultra.
                     </p>
                     <p class="text-dark">
                     Kegiatan diawali dengan penyampaian arahan oleh Kepala Bappeda Prov. Sultra (J. Robert), dalam arahannya beliau menyampaikan Kegiatan ini merupakan rangkaian penyusunan dokumen RPD tahun 2024-2026,  Akhir februari diharapkan sudah dilakukan penetapan RPD sehingga penyusunan dokumen perencanaan seperti RKPD dan renja OPD bisa dilaksanakan, Isu strategis yang perlu diperhatikan yaitu adanya perang rusia dan ukraina sehingga berpengaruh pada perekonomian nasional sehingga di perkirakan adanya resesi di tahun 2023.
@@ -125,11 +125,11 @@
               </div>
 
 
-            
+
             </div>
           </div>
           </section>
-          
+
           <!-- End Berita Section -->
 
     </main>
