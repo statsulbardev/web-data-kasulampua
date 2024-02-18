@@ -27,7 +27,7 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a href="{{ route('frontend.home') }}">Beranda</a></li>
+                <li><a href="{{ route('home') }}">Beranda</a></li>
                 <li><a href="./berita.php">Berita</a></li>
                 <li><a href="./statistik.php">Statistik</a></li>
                 <li><a href="{{ route('frontend.publication') }}">Publikasi</a></li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\News;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,8 @@ class HomeController extends Controller
         return view('frontend.home', [
             'socialTables'      => $social,
             'economyTables'     => $economy,
-            'agricultureTables' => $agriculture
+            'agricultureTables' => $agriculture,
+            'news'              => $this->getNews()
         ]);
     }
 
@@ -27,12 +29,17 @@ class HomeController extends Controller
         ]);
     }
 
-    private function getTable(string $path)
+    protected function getTable(string $path)
     {
         $directory = public_path('data/sosial');
 
         $file      = array_diff(scandir($directory), array('.', '..'));
 
         return $file;
+    }
+
+    protected function getNews()
+    {
+        return News::take(5)->orderBy('updated_at', 'desc')->get();
     }
 }

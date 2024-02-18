@@ -1,44 +1,35 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Frontend\GlosariumController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\InfographicController;
 use App\Http\Controllers\Frontend\PublicationController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/', [HomeController::class, 'index'])->name('frontend.home');
+Route::get('/news/show/{id}', [NewsController::class, 'show'])->name('news.details');
+
 Route::get('/tabel/{category}/{value}', [HomeController::class, 'show'])->name('frontend.show');
-
 Route::get('/publikasi', [PublicationController::class, 'index'])->name('frontend.publication');
-
 Route::get('/infografis', [InfographicController::class, 'index'])->name('frontend.infographic');
-
 Route::get('/tentang', fn() => view('frontend.about'))->name('frontend.about');
-
 Route::get('/glosarium', [GlosariumController::class, 'index'])->name('frontend.glosarium');
-
 Route::get('/sitemap', fn() => view('frontend.sitemap'))->name('frontend.sitemap');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+ Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('auth.login');
+ Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+ Route::middleware('auth')->group(function () {
+    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('auth.logout');
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/news/list', [NewsController::class, 'index'])->name('news.list');
+    Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
+    Route::post('/news/create',[NewsController::class, 'store'])->name('news.store');
+    Route::get('/news/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
+    Route::put('news/edit/{id}', [NewsController::class, 'update'])->name('news.update');
 });
-
-require __DIR__.'/auth.php';
