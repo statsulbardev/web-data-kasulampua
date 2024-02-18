@@ -12,7 +12,7 @@
                 <p>Lengkapi informasi berita yang anda tulis sesuai dengan form yang disediakan di bawah ini.</p>
 
                 <!-- Vertical Form -->
-                <form class="row g-3" method="POST" action="{{ route('news.update', $news->id) }}">
+                <form class="row g-3" method="POST" action="{{ route('news.update', $news->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('put')
 
@@ -22,7 +22,9 @@
                     </div>
                     <div class="col-12">
                         <label for="picture" class="form-label fw-bold">Link Cover Berita</label>
-                        <input type="text" class="form-control" id="picture" name="picture" value="{{ $news->picture }}">
+                        <br>
+                        <img src="{{ secure_asset('assets/img/news/' . $news->picture) }}" alt="" class="img-fluid w-auto mb-3">
+                        <input type="file" class="form-control" id="picture" name="picture">
                     </div>
                     <div class="col-12">
                         <label for="description" class="form-label fw-bold">Isi Berita</label>

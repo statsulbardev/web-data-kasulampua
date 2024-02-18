@@ -7,6 +7,8 @@ use App\Models\News;
 use ErrorException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class NewsController extends Controller
 {
@@ -26,12 +28,17 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
+        $fileName = (basename($request->picture->getClientOriginalName(), '.' . $request->picture->getClientOriginalExtension()));
+        $imageName = Str::slug($fileName) . '.' . $request->picture->getClientOriginalExtension();
+
         try {
+            $request->picture->move(public_path('assets/img/news/'), $imageName);
+
             DB::beginTransaction();
 
             News::create([
                 'title' => $request->title,
-                'picture' => $request->picture,
+                'picture' => $imageName,
                 'description' => $request->description
             ]);
 
