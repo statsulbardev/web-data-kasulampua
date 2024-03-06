@@ -28,6 +28,9 @@
                 <a href="./berita.php" class="btn">Lihat Berita Lainnya</a>
             </div>
         </div>
-
     </div>
 </section>
+
+@push('scripts')
+
+@endpush

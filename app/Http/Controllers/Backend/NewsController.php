@@ -12,6 +12,13 @@ use Illuminate\Support\Str;
 
 class NewsController extends Controller
 {
+    public function newsList()
+    {
+        $news = News::get();
+
+        return view('frontend.news', ['news' => $news]);
+    }
+
     public function index()
     {
         $news = News::get();

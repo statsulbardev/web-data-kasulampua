@@ -53,17 +53,12 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
     <script>
-        // Replace Math.random() with a pseudo-random number generator to get reproducible results in e2e tests
-                // Based on https://gist.github.com/blixt/f17b47c62508be59987b
-                var _seed = 42;
-                Math.random = function() {
-                  _seed = _seed * 16807 % 2147483647;
-                  return (_seed - 1) / 2147483646;
-                };
+        var _seed = 42;
+        Math.random = function() {
+            _seed = _seed * 16807 % 2147483647;
+            return (_seed - 1) / 2147483646;
+        };
     </script>
-
-    <!-- Scripts -->
-    @vite('resources/js/app.js')
 </head>
 
 <body>
@@ -75,42 +70,44 @@
 
     @include('frontend.partials.footer')
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script>
-        // $('#myTable').dataTable( {
-            //     "paging": true
-            // } );
-            let table = new DataTable('#myTable', {
-                // options
-                pageLength: 5,
-                // searching: false,
-                bLengthChange: false,
-                info: false
-            });
-            let table2 = new DataTable('#myTable2', {
-                // options
-                pageLength: 5,
-                // searching: false,
-                bLengthChange: false,
-                info: false
-            });
-            let table3 = new DataTable('#myTable3', {
-                // options
-                pageLength: 5,
-                // searching: false,
-                bLengthChange: false,
-                info: false
-            });
-            // $('#myTable').removeClass( 'display' ).addClass('table table-striped table-bordered');
-            // $('#myTable_paginate').removeClass( 'display' ).addClass('pagination justify-content-center');
+    @if(request()->routeIs('frontend.home'))
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        <script>
+            // $('#myTable').dataTable( {
+                //     "paging": true
+                // } );
+                let table = new DataTable('#myTable', {
+                    // options
+                    pageLength: 5,
+                    // searching: false,
+                    bLengthChange: false,
+                    info: false
+                });
+                let table2 = new DataTable('#myTable2', {
+                    // options
+                    pageLength: 5,
+                    // searching: false,
+                    bLengthChange: false,
+                    info: false
+                });
+                let table3 = new DataTable('#myTable3', {
+                    // options
+                    pageLength: 5,
+                    // searching: false,
+                    bLengthChange: false,
+                    info: false
+                });
+                // $('#myTable').removeClass( 'display' ).addClass('table table-striped table-bordered');
+                // $('#myTable_paginate').removeClass( 'display' ).addClass('pagination justify-content-center');
 
-            $('#all-search').keyup(function(){
-                table.search($(this).val()).draw();
-                table2.search($(this).val()).draw() ;
-                table3.search($(this).val()).draw() ;
-            });
-    </script>
+                $('#all-search').keyup(function(){
+                    table.search($(this).val()).draw();
+                    table2.search($(this).val()).draw() ;
+                    table3.search($(this).val()).draw() ;
+                });
+        </script>
+    @endif
 </body>
 </html>

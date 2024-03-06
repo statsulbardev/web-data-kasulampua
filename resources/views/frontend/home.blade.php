@@ -1,163 +1,5 @@
 <x-guest-layout>
-    <section id="section-1" class="d-flex align-items-center">
-        <div class="content-slider">
-            <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
-            <input type="radio" id="banner2" class="sec-1-input" name="banner">
-            <input type="radio" id="banner3" class="sec-1-input" name="banner">
-            <input type="radio" id="banner4" class="sec-1-input" name="banner">
-            <div class="slider">
-                <div id="top-banner-1" class="banner">
-                    <div class="banner-inner-wrapper header-text" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="main-caption">
-                            <h2>Selamat Datang di KASULAMPUA:</h2>
-                            <h1 style="color: #cda45e">KALIMANTAN</h1>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="more-info">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-user"></i>
-                                                <h4><span>Jumlah Penduduk Hasil SP2020:</span><br>17,05 juta jiwa</h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-globe"></i>
-                                                <h4><span>Luas Wilayah:</span><br>534.698.5 KM<em>2</em></h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-coins"></i>
-                                                <h4><span>Pertumbuhan Ekonomi 2022:</span><br>4,94%</h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-chart-pie"></i>
-                                                <h4><span>Kontribusi PDRB 2022:</span><br>9,23%</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="top-banner-2" class="banner">
-                    <div class="banner-inner-wrapper header-text">
-                        <div class="main-caption">
-                            <h2>Selamat Datang di KASULAMPUA:</h2>
-                            <h1 style="color: #cda45e">SULAWESI</h1>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="more-info">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-user"></i>
-                                                <h4><span>Jumlah Penduduk Hasil SP2020:</span><br>20,30 juta jiwa</h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-globe"></i>
-                                                <h4><span>Luas Wilayah:</span><br>186.216.1 km<em>2</em></h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-coins"></i>
-                                                <h4><span>Pertumbuhan Ekonomi 2022:</span><br>7,05%</h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-chart-pie"></i>
-                                                <h4><span>Kontribusi PDRB 2022:</span><br>7,03%</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="top-banner-3" class="banner">
-                    <div class="banner-inner-wrapper header-text">
-                        <div class="main-caption">
-                            <h2>Selamat Datang di KASULAMPUA:</h2>
-                            <h1 style="color: #cda45e">MALUKU</h1>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="more-info">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-user"></i>
-                                                <h4><span>Jumlah Penduduk Hasil SP2020:</span><br>3,20 juta jiwa</h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-globe"></i>
-                                                <h4><span>Luas Wilayah:</span><br>79.157,0 KM<em>2</em></h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-coins"></i>
-                                                <h4><span>Pertumbuhan Ekonomi 2022:</span><br>14,17%</h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-chart-pie"></i>
-                                                <h4><span>Kontribusi PDRB 2022:</span><br>0,65%</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="top-banner-4" class="banner">
-                    <div class="banner-inner-wrapper header-text">
-                        <div class="main-caption">
-                            <h2>Selamat Datang di KASULAMPUA:</h2>
-                            <h1 style="color: #cda45e">PAPUA</h1>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="more-info">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-user"></i>
-                                                <h4><span>Jumlah Penduduk Hasil SP2020:</span><br>5,60 juta jiwa</h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-globe"></i>
-                                                <h4><span>Luas Wilayah:</span><br>182.079,2 KM<em>2</em></h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-coins"></i>
-                                                <h4><span>Pertumbuhan Ekonomi 2022:</span><br>7,03%</h4>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <i class="fa fa-chart-pie"></i>
-                                                <h4><span>Kontribusi PDRB 2022:</span><br>1,85%</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <nav>
-                <div class="controls">
-                    <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span><span
-                            class="text">Kalimantan</span></label>
-                    <label for="banner2"><span class="progressbar"><span class="progressbar-fill"></span></span><span
-                            class="text">Sulawesi</span></label>
-                    <label for="banner3"><span class="progressbar"><span class="progressbar-fill"></span></span><span
-                            class="text">Maluku</span></label>
-                    <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span><span
-                            class="text">Papua</span></label>
-                </div>
-            </nav>
-        </div>
-    </section>
-    <!-- Hero End -->
+    @include('frontend.home-partials.hero')
 
     @include('frontend.home-partials.news', ['news' => $news])
 
@@ -301,75 +143,75 @@
 
         <!-- Data Section -->
     <section id="grafik" class="grafik section-bg">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
                 <h2>Statistik</h2>
-                    <p>Indikator Strategis</p>
+                <p>Indikator Strategis</p>
+            </div>
+
+            <div class="card text-center" style="padding: 10px; margin-bottom: 15px; color: #cda45e; font-weight: bold;">
+                Jumlah Penduduk Miskin di Kawasan Kasulampua, September 2022
+                <div class="chart" id="miskin"></div>
+                <div style="color:rgb(129, 129, 129); font-size: small; font-weight: 300;">
+                    Sumber: <span>BPS, Susenas September 2022</span>
                 </div>
+            </div>
 
-                    <div class="card text-center" style="padding: 10px; margin-bottom: 15px; color: #cda45e; font-weight: bold;">
-                    Jumlah Penduduk Miskin di Kawasan Kasulampua, September 2022
-                    <div class="chart" id="miskin"></div>
-                    <div style="color:rgb(129, 129, 129); font-size: small; font-weight: 300;">
-                        Sumber: <span>BPS, Susenas September 2022</span></div>
-                    </div>
+            <div class="card text-center" style="padding: 10px; margin-bottom: 15px; color: #cda45e; font-weight: bold;">
+                Indeks Pembangunan Manusia di Kawasan Kasulampua, 2022
+                <div class="chart" id="ipm"></div>
+                <div style="color:rgb(129, 129, 129); font-size: small; font-weight: 300;">
+                    Sumber: <span>BPS, berbagai sensus dan survei</span>
+                </div>
+            </div>
 
-                    <div class="card text-center" style="padding: 10px; margin-bottom: 15px; color: #cda45e; font-weight: bold;">
-                    Indeks Pembangunan Manusia di Kawasan Kasulampua, 2022
-                    <div class="chart" id="ipm"></div>
-                    <div style="color:rgb(129, 129, 129); font-size: small; font-weight: 300;">
-                        Sumber: <span>BPS, berbagai sensus dan survei</span></div>
-                    </div>
-
-                    <script>
-                        var options = {
-                        series: [{
+            <script>
+                var options = {
+                    series: [{
                         data: [356.51, 144.52, 201.95, 242.30, 50.58, 187.33, 389.71, 782.32, 314.74, 187.35, 169.26, 296.66, 82.13, 936.32, 222.36]
-                            }],
-                        chart: {
-                            type: ' bar', height: 450 }, plotOptions: { bar: { borderRadius: 4, horizontal: true, } },
-                                                            dataLabels: { enabled: true }, xaxis: { categories:
-                                                            ["Kalimantan Barat", "Kalimantan Tengah"
-                                                            , "Kalimantan Selatan" , "Kalimantan Timur"
-                                                            , "Kalimantan Utara" , "Sulawesi Utara" , "Sulawesi Tengah"
-                                                            , "Sulawesi Selatan" , "Sulawesi Tenggara" , "Gorontalo"
-                                                            , "Sulawesi Barat" , "Maluku" , "Maluku Utara" , "Papua"
-                                                            , "Papua Barat" ], } }; var chart=new
-                                                            ApexCharts(document.querySelector("#miskin"), options);
-                                                            chart.render(); </script>
+                    }],
+                    chart: {
+                        type: ' bar', height: 450 }, plotOptions: { bar: { borderRadius: 4, horizontal: true, } },
+                            dataLabels: { enabled: true }, xaxis: { categories:
+                            ["Kalimantan Barat", "Kalimantan Tengah"
+                                                    , "Kalimantan Selatan" , "Kalimantan Timur"
+                                                    , "Kalimantan Utara" , "Sulawesi Utara" , "Sulawesi Tengah"
+                                                    , "Sulawesi Selatan" , "Sulawesi Tenggara" , "Gorontalo"
+                                                    , "Sulawesi Barat" , "Maluku" , "Maluku Utara" , "Papua"
+                                                    , "Papua Barat" ], } }; var chart=new
+                                                    ApexCharts(document.querySelector("#miskin"), options);
+                                                    chart.render();
+            </script>
 
-                                                            <script>
-                                                                var options = {
-                        series: [{
-                        data: [68.63, 71.63, 71.84, 77.44, 71.83, 73.81, 70.28, 72.82, 72.23, 69.81, 66.92, 70.22, 69.47, 61.39, 65.89]
-                            }],
-                        chart: {
-                            type: 'bar',
-                            height: 450
-                        },
-                        plotOptions: {
-                            bar: {
-                            borderRadius: 4,
-                            horizontal: true,
-                            }
-                        },
-                        fill: {
-                            colors: ['#22b3c1']
-                        },
-                        dataLabels: {
-                            enabled: true
-                        },
-                        xaxis: {
-                            categories: ["Kalimantan Barat", "Kalimantan Tengah", "Kalimantan Selatan", "Kalimantan Timur", "Kalimantan Utara", "Sulawesi Utara", "Sulawesi Tengah", "Sulawesi Selatan", "Sulawesi Tenggara", "Gorontalo", "Sulawesi Barat", "Maluku", "Maluku Utara", "Papua", "Papua Barat"],
-                        }
-                        };
-                        var chart = new ApexCharts(document.querySelector("#ipm"), options);
-                        chart.render();
-                                                            </script>
-
-
-                                    </div>
+            <script>
+                var options = {
+                series: [{
+                data: [68.63, 71.63, 71.84, 77.44, 71.83, 73.81, 70.28, 72.82, 72.23, 69.81, 66.92, 70.22, 69.47, 61.39, 65.89]
+                    }],
+                chart: {
+                    type: 'bar',
+                    height: 450
+                },
+                plotOptions: {
+                    bar: {
+                    borderRadius: 4,
+                    horizontal: true,
+                    }
+                },
+                fill: {
+                    colors: ['#22b3c1']
+                },
+                dataLabels: {
+                    enabled: true
+                },
+                xaxis: {
+                    categories: ["Kalimantan Barat", "Kalimantan Tengah", "Kalimantan Selatan", "Kalimantan Timur", "Kalimantan Utara", "Sulawesi Utara", "Sulawesi Tengah", "Sulawesi Selatan", "Sulawesi Tenggara", "Gorontalo", "Sulawesi Barat", "Maluku", "Maluku Utara", "Papua", "Papua Barat"],
+                }
+                };
+                var chart = new ApexCharts(document.querySelector("#ipm"), options);
+                chart.render();
+            </script>
+        </div>
     </section>
     <!-- End Data Section -->
 

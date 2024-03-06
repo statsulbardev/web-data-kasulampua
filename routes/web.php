@@ -9,9 +9,10 @@ use App\Http\Controllers\Frontend\InfographicController;
 use App\Http\Controllers\Frontend\PublicationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('frontend.home');
 
-Route::get('/news/show/{id}', [NewsController::class, 'show'])->name('news.details');
+Route::get('/berita', [NewsController::class, 'newsList'])->name('frontend.news');
+Route::get('/berita/{id}', [NewsController::class, 'show'])->name('news.details');
 
 Route::get('/tabel/{category}/{value}', [HomeController::class, 'show'])->name('frontend.show');
 Route::get('/publikasi', [PublicationController::class, 'index'])->name('frontend.publication');
