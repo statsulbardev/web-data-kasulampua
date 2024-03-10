@@ -11,9 +11,9 @@ class HomeController extends Controller
     use TableTrait;
     public function index()
     {
-        $social      = $this->getTable('data/sosial');
-        $economy     = $this->getTable('data/ekonomi');
-        $agriculture = $this->getTable('data/pertanian');
+        $social      = $this->getTable('sosial');
+        $economy     = $this->getTable('ekonomi');
+        $agriculture = $this->getTable('pertanian');
 
         return view('frontend.home', [
             'socialTables'      => $social,

@@ -17,5 +17,5 @@ function downloadTable($category, $filename)
 
 function getPath($category, $filename)
 {
-    return sprintf(public_path('data\%s\%s'), $category, $filename);
+    return sprintf(storage_path('app/public/data/%s/%s'), $category, $filename);
 }

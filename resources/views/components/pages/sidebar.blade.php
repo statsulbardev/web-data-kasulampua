@@ -20,7 +20,7 @@
 
         {{-- Statistik --}}
         <li class="nav-item">
-            <a class="nav-link collapsed" href="pages-faq.html">
+            <a class="nav-link {{ !request()->routeIs('statistics.*') ? 'collapsed' : '' }}" href="{{ route('statistics.list') }}">
                 <i class="bi bi-bar-chart-steps"></i>
                 <span>Statistik</span>
             </a>

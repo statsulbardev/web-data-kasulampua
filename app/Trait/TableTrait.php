@@ -6,7 +6,7 @@ trait TableTrait
 {
     public function getTable(string $path)
     {
-        $directory = public_path($path);
+        $directory = storage_path('app/public/data/' . $path);
 
         $file      = array_diff(scandir($directory), array('.', '..'));
 

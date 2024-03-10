@@ -31,13 +31,15 @@
                             @foreach ($news as $newsItem)
                                 <tr>
                                     <th scope="row">{{ $newsItem->updated_at->format('d M Y') }}</th>
-                                    <td>{{ $newsItem->title }}</td>
+                                    <td width="25%">{{ $newsItem->title }}</td>
                                     <td>{!! Str::limit($newsItem->description, 300) !!}</td>
-                                    <td>
-                                        <div class="d-flex justify-content-between">
-                                            <a href="{{ route('news.edit', $newsItem->id) }}" class="btn btn-primary">Edit</a>
-                                            <a href="" class="btn btn-secondary">Hapus</a>
-                                        </div>
+                                    <td width="10%">
+                                        <a href="{{ route('news.edit', $newsItem->id) }}" class="btn btn-primary mr-2">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        <a href="" class="btn btn-secondary">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
