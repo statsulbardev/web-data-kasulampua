@@ -7,11 +7,12 @@
             <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12">
                     <div style="width:100%; display:flex; justify-content: flex-end;">
-                        {{-- <a href=<?php echo "'" .sprintf("./data/%s/%s", $category, $filename)."'"?>
-                            class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Download Excel</a> --}}
+                        <a href="{{ downloadTable($category, $filename) }}" target="_blank" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+                            Download Excel
+                        </a>
                     </div>
                     <div>
-                        {{ parseExcelToHTML($category, $filename) }}
+                        {!! parseExcelToHTML($category, $filename) !!}
                     </div>
                 </div>
             </div>

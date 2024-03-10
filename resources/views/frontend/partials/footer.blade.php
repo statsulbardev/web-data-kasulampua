@@ -10,7 +10,6 @@
                         <p>
                             Jl. RE. Martadinata No. 10<br>
                             Mamuju, Sulawesi Barat<br><br>
-                            <strong>Telp:</strong>(0426) 22103, <br>
                             <strong>Mobile:</strong>0822 9338 2522, <br>
                             <strong>Email:</strong> sulbar@bps.go.id<br>
                         </p>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\GlosariumController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\InfographicController;
 use App\Http\Controllers\Frontend\PublicationController;
+use App\Http\Controllers\Frontend\StatisticController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('frontend.home');
@@ -15,6 +16,7 @@ Route::get('/berita', [NewsController::class, 'newsList'])->name('frontend.news'
 Route::get('/berita/{id}', [NewsController::class, 'show'])->name('news.details');
 
 Route::get('/tabel/{category}/{value}', [HomeController::class, 'show'])->name('frontend.show');
+Route::get('/tabel-indikator', [StatisticController::class, 'index'])->name('frontend.statistic');
 Route::get('/publikasi', [PublicationController::class, 'index'])->name('frontend.publication');
 Route::get('/infografis', [InfographicController::class, 'index'])->name('frontend.infographic');
 Route::get('/tentang', fn() => view('frontend.about'))->name('frontend.about');

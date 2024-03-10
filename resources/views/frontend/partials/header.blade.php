@@ -29,7 +29,7 @@
             <ul>
                 <li><a href="{{ route('frontend.home') }}">Beranda</a></li>
                 <li><a href="{{ route('frontend.news') }}">Berita</a></li>
-                <li><a href="./statistik.php">Statistik</a></li>
+                <li><a href="{{ route('frontend.statistic') }}">Statistik</a></li>
                 <li><a href="{{ route('frontend.publication') }}">Publikasi</a></li>
                 <li><a href="{{ route('frontend.infographic') }}">Infografis</a></li>
                 <li><a href="{{ route('frontend.about') }}">Tentang</a></li>

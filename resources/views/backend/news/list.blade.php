@@ -24,7 +24,6 @@
                                 <th scope="col">Tanggal</th>
                                 <th scope="col">Judul Berita</th>
                                 <th scope="col">Deskripsi</th>
-                                <th scope="col">Gambar</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
@@ -35,10 +34,7 @@
                                     <td>{{ $newsItem->title }}</td>
                                     <td>{!! Str::limit($newsItem->description, 300) !!}</td>
                                     <td>
-                                        <img src="{{ $newsItem->picture }}" alt="" width="100">
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
+                                        <div class="d-flex justify-content-between">
                                             <a href="{{ route('news.edit', $newsItem->id) }}" class="btn btn-primary">Edit</a>
                                             <a href="" class="btn btn-secondary">Hapus</a>
                                         </div>
