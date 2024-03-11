@@ -3,10 +3,10 @@
     <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="topnav-info d-flex align-items-center">
             <i class="nav-link d-flex align-items-center">
-                <a href="{{ route('frontend.glosarium') }}"><span>Glosarium</span></a>
+                <a href="{{ route('frontend.glosarium.index') }}"><span>Glosarium</span></a>
             </i>
             <i class="nav-link d-flex align-items-center ms-4">
-                <a href="{{ route('frontend.sitemap') }}"><span>Peta Situs</span></a>
+                <a href="{{ route('frontend.sitemap.index') }}"><span>Peta Situs</span></a>
             </i>
         </div>
         <div class="languages d-none d-md-flex align-items-center">
@@ -28,11 +28,11 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
                 <li><a href="{{ route('frontend.home') }}">Beranda</a></li>
-                <li><a href="{{ route('frontend.news') }}">Berita</a></li>
-                <li><a href="{{ route('frontend.statistic') }}">Statistik</a></li>
-                <li><a href="{{ route('frontend.publication') }}">Publikasi</a></li>
-                <li><a href="{{ route('frontend.infographic') }}">Infografis</a></li>
-                <li><a href="{{ route('frontend.about') }}">Tentang</a></li>
+                <li><a href="{{ route('frontend.news.index') }}">Berita</a></li>
+                <li><a href="{{ route('frontend.statistic.index') }}">Statistik</a></li>
+                <li><a href="{{ route('frontend.publication.index') }}">Publikasi</a></li>
+                <li><a href="{{ route('frontend.infographic.index') }}">Infografis</a></li>
+                <li><a href="{{ route('frontend.about.index') }}">Tentang</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

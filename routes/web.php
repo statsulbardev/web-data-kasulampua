@@ -1,46 +1,68 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\NewsController;
-use App\Http\Controllers\Backend\StatisticController as BackendStatisticController;
-use App\Http\Controllers\Frontend\GlosariumController;
-use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\InfographicController;
-use App\Http\Controllers\Frontend\PublicationController;
-use App\Http\Controllers\Frontend\StatisticController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\StatisticController;
+use App\Http\Controllers\GlosariumController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InfographicController;
+use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('frontend.home');
+Route::redirect('/', 'login');
 
-Route::get('/berita', [NewsController::class, 'newsList'])->name('frontend.news');
-Route::get('/berita/{id}', [NewsController::class, 'show'])->name('news.details');
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('auth.login');
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 
-Route::get('/tabel/{category}/{value}', [HomeController::class, 'show'])->name('frontend.show');
-Route::get('/tabel-indikator', [StatisticController::class, 'index'])->name('frontend.statistic');
-Route::get('/publikasi', [PublicationController::class, 'index'])->name('frontend.publication');
-Route::get('/infografis', [InfographicController::class, 'index'])->name('frontend.infographic');
-Route::get('/tentang', fn() => view('frontend.about'))->name('frontend.about');
-Route::get('/glosarium', [GlosariumController::class, 'index'])->name('frontend.glosarium');
-Route::get('/sitemap', fn() => view('frontend.sitemap'))->name('frontend.sitemap');
+// Frontend
+Route::name('frontend.')->group(function() {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
- Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('auth.login');
- Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+    Route::get('/news', [NewsController::class, 'frontIndex'])->name('news.index');
+    Route::get('/news/{id}', [NewsController::class, 'frontShow'])->name('news.details');
 
- Route::middleware('auth')->group(function () {
+    Route::get('/statistic', [StatisticController::class, 'frontIndex'])->name('statistic.index');
+    Route::get('/statistic/{category}/{value}', [StatisticController::class, 'frontShow'])->name('statistic.show');
+
+    Route::get('/publication', [PublicationController::class, 'frontIndex'])->name('publication.index');
+    Route::get('/infografis', [InfographicController::class, 'frontIndex'])->name('infographic.index');
+    Route::get('/tentang', fn() => view('frontend.about'))->name('about.index');
+    Route::get('/glosarium', [GlosariumController::class, 'index'])->name('glosarium.index');
+    Route::get('/sitemap', fn() => view('frontend.sitemap'))->name('sitemap.index');
+});
+
+// Backend
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('auth.logout');
 
-    Route::prefix('backend')->group(function () {
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        Route::get('/news/list', [NewsController::class, 'index'])->name('news.list');
-        Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
-        Route::post('/news/create',[NewsController::class, 'store'])->name('news.store');
-        Route::get('/news/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
-        Route::put('/news/edit/{id}', [NewsController::class, 'update'])->name('news.update');
+    Route::name('backend.')->prefix('backend')->group(function () {
+        Route::get('/news', [NewsController::class, 'backIndex'])->name('news.index');
+        Route::get('/news/create', [NewsController::class, 'backCreate'])->name('news.create');
+        Route::post('/news/create',[NewsController::class, 'backStore'])->name('news.store');
+        Route::get('/news/edit/{id}', [NewsController::class, 'backEdit'])->name('news.edit');
+        Route::put('/news/edit/{id}', [NewsController::class, 'backUpdate'])->name('news.update');
+        Route::post('/news', [NewsController::class, 'backDestroy'])->name('news.delete');
 
-        Route::get('/statistik', [BackendStatisticController::class, 'index'])->name('statistics.list');
-        Route::get('/statistik/create', [BackendStatisticController::class, 'create'])->name('statistics.create');
-        Route::post('/statistik/create', [BackendStatisticController::class, 'store'])->name('statistics.store');
-        Route::post('/statistik', [BackendStatisticController::class, 'destroy'])->name('statistics.delete');
+        Route::get('/statistic', [StatisticController::class, 'backIndex'])->name('statistic.index');
+        Route::get('/statistic/create', [StatisticController::class, 'backCreate'])->name('statistic.create');
+        Route::post('/statistic/create', [StatisticController::class, 'backStore'])->name('statistic.store');
+        Route::post('/statistic', [StatisticController::class, 'backDestroy'])->name('statistic.delete');
+
+        Route::get('/publication', [PublicationController::class, 'backIndex'])->name('publication.index');
+        Route::get('/publication/create', [PublicationController::class, 'backCreate'])->name('publication.create');
+        Route::post('/publication/create', [PublicationController::class, 'backStore'])->name('publication.store');
+        Route::get('/publication/edit/{id}', [PublicationController::class, 'backEdit'])->name('publication.edit');
+        Route::put('/publication/edit/{id}', [PublicationController::class, 'backUpdate'])->name('publication.update');
+        Route::post('/publication', [PublicationController::class, 'backDestroy'])->name('publication.delete');
+
+        Route::get('/infographic', [InfographicController::class, 'backIndex'])->name('infographic.index');
+        Route::get('/infographic/create', [InfographicController::class, 'backCreate'])->name('infographic.create');
+        Route::post('infographic/create', [InfographicController::class, 'backStore'])->name('infographic.store');
+        Route::post('/infographic', [InfographicController::class, 'backDestroy'])->name('infographic.delete');
+
+        Route::get('/user', [UserController::class, 'index'])->name('user.index');
     });
 });

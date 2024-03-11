@@ -5,14 +5,14 @@
 
     <main id="main" class="main">
         <div class="pagetitle mb-3">
-            <h1>Membuat Berita Baru</h1>
+            <h1>Edit Berita</h1>
         </div>
         <div class="card">
             <div class="mt-4 card-body">
                 <p>Lengkapi informasi berita yang anda tulis sesuai dengan form yang disediakan di bawah ini.</p>
 
                 <!-- Vertical Form -->
-                <form class="row g-3" method="POST" action="{{ route('news.update', $news->id) }}" enctype="multipart/form-data">
+                <form class="row g-3" method="POST" action="{{ route('backend.news.update', $news->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('put')
 
@@ -23,7 +23,7 @@
                     <div class="col-12">
                         <label for="picture" class="form-label fw-bold">Link Cover Berita</label>
                         <br>
-                        <img src="{{ secure_asset('assets/img/news/' . $news->picture) }}" alt="" class="img-fluid w-auto mb-3">
+                        <img src="{{ secure_asset('assets/img/news/' . $news->picture) }}" alt="" class="img-fluid mb-3 rounded" width="300">
                         <input type="file" class="form-control" id="picture" name="picture">
                     </div>
                     <div class="col-12">

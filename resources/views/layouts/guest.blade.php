@@ -70,7 +70,7 @@
 
     @include('frontend.partials.footer')
 
-    @if(request()->routeIs('frontend.home') || request()->routeIs('frontend.statistic'))
+    @if(request()->routeIs('frontend.home') || request()->routeIs('frontend.statistic.index'))
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
