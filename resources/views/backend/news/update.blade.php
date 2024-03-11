@@ -23,7 +23,7 @@
                     <div class="col-12">
                         <label for="picture" class="form-label fw-bold">Link Cover Berita</label>
                         <br>
-                        <img src="{{ secure_asset('assets/img/news/' . $news->picture) }}" alt="" class="img-fluid mb-3 rounded" width="300">
+                        <img src="{{ secure_asset('storage/app/public/' . $news->picture) }}" alt="" class="img-fluid mb-3 rounded" width="150">
                         <input type="file" class="form-control" id="picture" name="picture">
                     </div>
                     <div class="col-12">

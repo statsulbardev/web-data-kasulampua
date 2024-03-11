@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
-use ErrorException;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 
 class NewsController extends Controller
 {
@@ -38,24 +39,30 @@ class NewsController extends Controller
 
     public function backStore(Request $request)
     {
-        $fileName = (basename($request->picture->getClientOriginalName(), '.' . $request->picture->getClientOriginalExtension()));
-
-        $imageName = Str::slug($fileName) . '.' . $request->picture->getClientOriginalExtension();
+        $request->validate([
+            'title'       => 'required|min:5',
+            'picture'     => 'nullable|mimes:png,jpg',
+            'description' => 'required'
+        ]);
 
         try {
-            $request->picture->move(public_path('assets/img/news/'), $imageName);
-
             DB::beginTransaction();
 
+            $fileName = $request->picture->getClientOriginalName();
+
+            $filePath = $request->file('picture')->storeAs("/news", $fileName, 'public');
+
             News::create([
-                'title' => $request->title,
-                'picture' => $imageName,
+                'title'       => $request->title,
+                'picture'     => $filePath,
                 'description' => $request->description
             ]);
 
             DB::commit();
-        } catch(ErrorException $error) {
+        } catch(Exception $error) {
             DB::rollBack();
+
+            Log::error($error->getMessage());
         }
 
         return redirect()->route('backend.news.index');
@@ -68,17 +75,58 @@ class NewsController extends Controller
         return view('backend.news.update', ['news' => $news]);
     }
 
-    public function update()
-    {}
+    public function backUpdate($id, Request $request)
+    {
+        $request->validate([
+            'title'       => 'required|min:5',
+            'picture'     => 'nullable|mimes:png,jpg',
+            'description' => 'required'
+        ]);
+
+        try {
+            DB::beginTransaction();
+
+            $news = News::findOrFail($id);
+
+            File::delete(storage_path('app/public/' . $news->picture));
+
+            $fileName = $request->picture->getClientOriginalName();
+
+            $filePath = $request->file('picture')->storeAs("/news", $fileName, 'public');
+
+            $news->update([
+                'title'       => $request->title,
+                'picture'     => $filePath,
+                'description' => $request->description
+            ]);
+
+            DB::commit();
+        } catch(Exception $error) {
+            DB::rollBack();
+
+            Log::error($error->getMessage());
+        }
+
+        return redirect()->route('backend.news.index');
+    }
 
     public function backDestroy(Request $request)
     {
-        $newsId = $request->post('newsid');
+        try {
+            DB::beginTransaction();
 
-        // Delete news image
+            $news = News::findOrFail($request->newsId);
 
-        // Delete news record
-        News::where('id', $newsId)->delete();
+            File::delete(storage_path('app/public/' . $news->picture));
+
+            $news->delete();
+
+            DB::commit();
+        } catch(Exception $error) {
+            DB::rollBack();
+
+            Log::error($error->getMessage());
+        }
 
         return redirect()->route('backend.news.index');
     }
