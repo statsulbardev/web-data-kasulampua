@@ -12,7 +12,7 @@
                         <div>
                             <!-- Featured image -->
                             <div class="bg-image hover-overlay shadow-1-strong ripple mb-4" data-mdb-ripple-color="light">
-                                <img src="{{ secure_asset('assets/img/news/' . $newsItem->picture) }}" class="img-fluid" />
+                                <img src="{{ secure_asset('storage/app/public/' . $newsItem->picture) }}" class="img-fluid" />
                                 <a href="#!">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>
