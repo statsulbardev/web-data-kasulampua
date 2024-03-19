@@ -80,21 +80,21 @@
                 // } );
                 let table = new DataTable('#myTable', {
                     // options
-                    pageLength: 5,
+                    pageLength: 10,
                     // searching: false,
                     bLengthChange: false,
                     info: false
                 });
                 let table2 = new DataTable('#myTable2', {
                     // options
-                    pageLength: 5,
+                    pageLength: 10,
                     // searching: false,
                     bLengthChange: false,
                     info: false
                 });
                 let table3 = new DataTable('#myTable3', {
                     // options
-                    pageLength: 5,
+                    pageLength: 10,
                     // searching: false,
                     bLengthChange: false,
                     info: false

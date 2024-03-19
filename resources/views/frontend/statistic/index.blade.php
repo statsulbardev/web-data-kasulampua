@@ -43,12 +43,12 @@
                                                         $tahun = explode(",", $nama_file, 2)[1];
                                                         $nama_file = explode(",", $nama_file, 2)[0];
                                                     @endphp
-                                                    <td width="100%">
+                                                    <td>
                                                         <a href={{ route('frontend.statistic.show', ['category'=> 'sosial', 'value' => $value]) }}>
                                                             {{ $nama_file }}
                                                         </a>
                                                     </td>
-                                                    <td>{{ $tahun }}</td>
+                                                    <td width="10%">{{ $tahun }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -75,12 +75,12 @@
                                                         $tahun = explode(",", $nama_file, 2)[1];
                                                         $nama_file = explode(",", $nama_file, 2)[0];
                                                     @endphp
-                                                    <td width="100%">
+                                                    <td>
                                                         <a href={{ route('frontend.statistic.show', ['category'=> 'ekonomi', 'value' => $value]) }}>
                                                             {{ $nama_file }}
                                                         </a>
                                                     </td>
-                                                    <td>{{ $tahun }}</td>
+                                                    <td width="10%">{{ $tahun }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -107,12 +107,12 @@
                                                         $tahun = explode(",", $nama_file);
                                                         $tahun = $tahun[count($tahun)-1];
                                                     @endphp
-                                                    <td width="100%">
+                                                    <td>
                                                         <a href={{ route('frontend.statistic.show', ['category'=> 'pertanian', 'value' => $value]) }}>
                                                             {{ $nama_file }}
                                                         </a>
                                                     </td>
-                                                    <td>{{ $tahun }}</td>
+                                                    <td width="10%">{{ $tahun }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

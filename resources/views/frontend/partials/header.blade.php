@@ -1,5 +1,5 @@
 <!-- ======= Top Bar ======= -->
-<div id="topbar" class="d-flex align-items-center fixed-top">
+<div id="topbar" class="d-flex align-items-center fixed-top" @if (!request()->routeIs('frontend.home')) style="background-color: black" @endif>
     <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="topnav-info d-flex align-items-center">
             <i class="nav-link d-flex align-items-center">
@@ -19,7 +19,7 @@
 </div>
 
 <!-- Start Header -->
-<header id="header" class="fixed-top d-flex align-items-center">
+<header id="header" class="fixed-top d-flex align-items-center" @if (!request()->routeIs('frontend.home')) style="background-color: black" @endif>
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
         <a href="index.php" class="logo me-auto me-lg-0">
             <img src="{{ secure_asset('assets/img/kasulampualogo.svg') }}" alt="" class="img-fluid">

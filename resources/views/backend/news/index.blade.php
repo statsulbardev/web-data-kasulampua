@@ -31,7 +31,10 @@
                                 @foreach ($news as $newsItem)
                                 <tr>
                                     <th scope="row">{{ $newsItem->updated_at->format('d M Y') }}</th>
-                                    <td width="25%">{{ $newsItem->title }}</td>
+                                    <td width="25%">
+                                        <img src="{{ secure_asset('storage/app/public/' . $newsItem->picture) }}" alt="" class="rounded" width="150">
+                                        <div class="pt-2">{{ $newsItem->title }}</div>
+                                    </td>
                                     <td width="60%">{!! Str::limit($newsItem->description, 300) !!}</td>
                                     <td class="d-flex justify-content-between">
                                         <a href="{{ route('backend.news.edit', $newsItem->id) }}" class="btn btn-primary">
