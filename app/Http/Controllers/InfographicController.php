@@ -2,31 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Trait\InfographicTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 class InfographicController extends Controller
 {
+    use InfographicTrait;
+
     public function frontIndex()
     {
-        $path = storage_path('app/public/infographic/');
-
-        $infographics = File::exists($path)
-            ? File::allFiles($path)
-            : null;
-
-        return view('frontend.infographic.index', ['infographics' => $infographics]);
+        return view('frontend.infographic.index', ['infographics' => $this->getInfographic()]);
     }
 
     public function backIndex()
     {
-        $path = storage_path('app/public/infographic/');
-
-        $infographics = File::exists($path)
-            ? File::allFiles($path)
-            : null;
-
-        return view('backend.infographic.index', ['infographics' => $infographics]);
+        return view('backend.infographic.index', ['infographics' => $this->getInfographic()]);
     }
 
     public function backCreate()

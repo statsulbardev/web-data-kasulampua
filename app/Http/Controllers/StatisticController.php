@@ -64,7 +64,6 @@ class StatisticController extends Controller
         }
     }
 
-
     public function backDestroy(Request $request)
     {
         $filePath = $request->post('filepath');

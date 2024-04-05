@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="{{ secure_asset('assets/vendor/simple-datatables/style.css') }}">
 
     <link rel="stylesheet" href={{ secure_asset('assets/css/nichestyle.css') }}>
+
+    @vite('resources/js/app.js')
 </head>
 
 <body>
