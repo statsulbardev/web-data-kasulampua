@@ -29,12 +29,11 @@
                             </div>
 
                             <!-- Article title and description -->
-                            <div style="color: #cda45e">
-                                <h5>{{ $newsItem->title }}</h5>
-
-                                <p class="text-dark">
+                            <div>
+                                <h5 style="color: #cda45e">{{ $newsItem->title }}</h5>
+                                <span class="text-dark">
                                     {!! Str::limit($newsItem->description, 400) !!}
-                                </p>
+                                </span>
                             </div>
                             <a href="{{ route('frontend.news.details', $newsItem->id) }}" class="btn">Selengkapnya</a>
                             <!-- News block -->

@@ -28,7 +28,9 @@
                             </div>
                         </div>
 
-                        {!! $news->description !!}
+                        <div class="text-dark">
+                            {!! $news->description !!}
+                        </div>
                     </div>
                 </div>
             </div>
