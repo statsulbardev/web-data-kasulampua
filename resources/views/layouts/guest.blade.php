@@ -36,18 +36,9 @@
     <link rel="stylesheet" href={{ secure_asset('assets/css/pagination.css') }}>
 
     <script>
-        window.Promise ||
-                  document.write(
-                    '<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"><\/script>'
-                  )
-                window.Promise ||
-                  document.write(
-                    '<script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20171210/classList.min.js"><\/script>'
-                  )
-                window.Promise ||
-                  document.write(
-                    '<script src="https://cdn.jsdelivr.net/npm/findindex_polyfill_mdn"><\/script>'
-                  )
+        window.Promise || document.write('<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"><\/script>')
+        window.Promise || document.write('<script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20171210/classList.min.js"><\/script>')
+        window.Promise || document.write('<script src="https://cdn.jsdelivr.net/npm/findindex_polyfill_mdn"><\/script>')
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -62,51 +53,46 @@
 </head>
 
 <body>
-    @include('frontend.partials.header')
+    <x-pages.frontend.header />
 
     <main>
         {{ $slot }}
     </main>
 
-    @include('frontend.partials.footer')
+    <x-pages.frontend.footer />
 
     @if(request()->routeIs('frontend.home') || request()->routeIs('frontend.statistic.index'))
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script>
-            // $('#myTable').dataTable( {
-                //     "paging": true
-                // } );
-                let table = new DataTable('#myTable', {
-                    // options
-                    pageLength: 10,
-                    // searching: false,
-                    bLengthChange: false,
-                    info: false
-                });
-                let table2 = new DataTable('#myTable2', {
-                    // options
-                    pageLength: 10,
-                    // searching: false,
-                    bLengthChange: false,
-                    info: false
-                });
-                let table3 = new DataTable('#myTable3', {
-                    // options
-                    pageLength: 10,
-                    // searching: false,
-                    bLengthChange: false,
-                    info: false
-                });
-                // $('#myTable').removeClass( 'display' ).addClass('table table-striped table-bordered');
-                // $('#myTable_paginate').removeClass( 'display' ).addClass('pagination justify-content-center');
+            let table = new DataTable('#myTable', {
+                // options
+                pageLength: 10,
+                // searching: false,
+                bLengthChange: false,
+                info: false
+            });
+            let table2 = new DataTable('#myTable2', {
+                // options
+                pageLength: 10,
+                // searching: false,
+                bLengthChange: false,
+                info: false
+            });
+            let table3 = new DataTable('#myTable3', {
+                // options
+                pageLength: 10,
+                // searching: false,
+                bLengthChange: false,
+                info: false
+            });
 
-                $('#all-search').keyup(function(){
-                    table.search($(this).val()).draw();
-                    table2.search($(this).val()).draw() ;
-                    table3.search($(this).val()).draw() ;
-                });
+            $('#all-search').keyup(function(){
+                table.search($(this).val()).draw();
+                table2.search($(this).val()).draw() ;
+                table3.search($(this).val()).draw() ;
+            });
         </script>
     @endif
 </body>
