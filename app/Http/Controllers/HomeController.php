@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Indicators;
 use App\Models\News;
 use App\Models\Publication;
 use App\Trait\TableTrait;
@@ -19,13 +20,18 @@ class HomeController extends Controller
             ? File::allFiles($path)
             : null;
 
+        $ipm = Indicators::with('region')->where('tahun', date("Y"))->where('indikator', 'ipm')->get();
+        $kemiskinan = Indicators::with('region')->where('tahun', date("Y"))->where('indikator', 'kemiskinan')->get();
+
         return view('frontend.home.index', [
             'socialTables'      => $this->getTable('sosial'),
             'economyTables'     => $this->getTable('ekonomi'),
             'agricultureTables' => $this->getTable('pertanian'),
             'news'              => News::orderBy('updated_at', 'desc')->take(5)->get(),
             'publications'      => Publication::orderBy('created_at', 'desc')->take(6)->get(),
-            'infographics'      => $infographics
+            'infographics'      => $infographics,
+            'ipm'=> $ipm,
+            'kemiskinan' => $kemiskinan
         ]);
     }
 }

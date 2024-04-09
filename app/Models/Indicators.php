@@ -11,4 +11,9 @@ class Indicators extends Model
     protected $fillable = [
         'tahun', 'kode_wilayah', 'indikator', 'data', 'keterangan'
     ];
+
+    public function region()
+    {
+        return $this->belongsTo(Region::class, 'kode_wilayah', 'kode_wilayah');
+    }
 }

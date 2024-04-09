@@ -5,7 +5,10 @@
 
     @include('frontend.statistic.home')
 
-    @include('frontend.home.home-partials.graphics')
+    @include('frontend.home.home-partials.graphics', [
+        'ipm' => $ipm,
+        'kemiskinan' => $kemiskinan
+    ])
 
     @include('frontend.publication.home', ['publications' => $publications])
 
