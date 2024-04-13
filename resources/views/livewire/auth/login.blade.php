@@ -34,9 +34,12 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="credits">
+                            <div class="credits text-white">
                                 Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
                             </div>
+                            <small class="text-secondary">
+                                Dikembangkan oleh BPS Provinsi Sulawesi Barat
+                            </small>
                         </div>
                     </div>
                 </div>

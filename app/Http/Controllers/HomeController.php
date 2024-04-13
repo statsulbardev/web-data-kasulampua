@@ -30,8 +30,8 @@ class HomeController extends Controller
             'news'              => News::orderBy('updated_at', 'desc')->take(5)->get(),
             'publications'      => Publication::orderBy('created_at', 'desc')->take(6)->get(),
             'infographics'      => $infographics,
-            'ipm'=> $ipm,
-            'kemiskinan' => $kemiskinan
+            'ipm'               => $ipm,
+            'kemiskinan'        => $kemiskinan
         ]);
     }
 }

@@ -21,7 +21,7 @@ use App\Livewire\Publication\PublicationBuilder;
 use App\Livewire\Publication\PublicationList;
 use App\Livewire\Table\TableBuilder;
 use App\Livewire\Table\TableList;
-
+use App\Livewire\User\UserList;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', 'login');
@@ -40,7 +40,7 @@ Route::name('frontend.')->group(function() {
     Route::get('/publication', [PublicationController::class, 'index'])->name('publication.index');
     Route::get('/infografis', [InfographicController::class, 'index'])->name('infographic.index');
     Route::get('/tentang', fn() => view('frontend.about'))->name('about.index');
-    Route::get('/glosarium', [GlosariumController::class, 'index'])->name('glosarium.index');
+    Route::get('/glosarium', fn() => view('frontend.glosarium'))->name('glosarium.index');
     Route::get('/sitemap', fn() => view('frontend.sitemap'))->name('sitemap.index');
 });
 
@@ -67,6 +67,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/infographic', InfographicList::class)->name('infographic.index');
         Route::get('/infographic/create', InfographicBuilder::class)->name('infographic.create');
 
-        Route::get('/user', [UserController::class, 'index'])->name('user.index');
+        Route::get('/user', UserList::class)->name('user.index');
     });
 });
